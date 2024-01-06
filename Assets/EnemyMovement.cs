@@ -10,18 +10,25 @@ public class EnemyMovement : MonoBehaviour
     int currDirection = 0;
     [SerializeField] float speed = 2f;
     int newDir = 0;
-    bool inCollision;
+    bool inCollision, gameStarted;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        UIManager.Instance.gameOver += GameFinished;
+    }
 
+    void GameFinished()
+    {
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*if (!gameStarted)
+            return;*/
         transform.position += direction * Time.deltaTime * speed;
     }
 
@@ -52,6 +59,7 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
+    //Calculating direction based on collision
     void GetDirection(int dir)
     {
         switch (dir)

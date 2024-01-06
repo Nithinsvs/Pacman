@@ -11,6 +11,11 @@ public class PlayerSpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UIManager.Instance.gameStarted += GeneratePlayer;
+    }
+
+    void GeneratePlayer()
+    {
         Instantiate(player, spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)], Quaternion.identity);
     }
 
