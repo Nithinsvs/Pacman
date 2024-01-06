@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static Action gameOver;
+
     Vector3 targetPosition;
     [SerializeField] private float speed = 5f;
 
@@ -30,6 +33,14 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * speed);
             yield return null;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            gameOver();
         }
     }
 

@@ -9,6 +9,7 @@ TagManager:
   - Up
   - Down
   - Wall
+  - Enemy
   layers:
   - Default
   - TransparentFX
