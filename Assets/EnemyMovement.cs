@@ -54,7 +54,7 @@ public class EnemyMovement : MonoBehaviour
             newDir = Random.Range(0, 4);
         }
 
-        Debug.Log("newDir = " + newDir);
+        //Debug.Log("newDir = " + newDir);
         GetDirection(newDir);
 
     }
@@ -91,7 +91,7 @@ public class EnemyMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        Debug.Log("inCollision = " + inCollision);
+        //Debug.Log("inCollision = " + inCollision);
 
         if (inCollision)
             Collided();
