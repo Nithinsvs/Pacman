@@ -20,9 +20,10 @@ public class CameraScript : MonoBehaviour
         MatchCamera();
     }
 
+//Checks for the camera
     private void MatchCamera()
     {
-        var cam = GetComponent<Camera>();
+        Cam cam = GetComponent<Camera>();
         if (cam == null) return;
 
         var position = cam.ViewportToWorldPoint(Vector3.zero);
