@@ -20,6 +20,7 @@ public class CameraScript : MonoBehaviour
         MatchCamera();
     }
 
+//Checks for the camera
     private void MatchCamera()
     {
         var cam = GetComponent<Camera>();
